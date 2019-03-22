@@ -1,0 +1,83 @@
+﻿body { 
+  background-color: #ffffcc;
+  font-family:      Georgia, "Times New Roman", Times, serif;
+  font-size:        small;
+  margin:           0px;
+}
+
+header.top {
+                background-color: #ccffff;
+                margin: 10px 10px 0px 10px;
+                height:           118px;
+}
+header.top img#headerSlogan {
+	float: right;
+                margin-right:-70px;
+}
+header.top img#headerLogo{
+               margin-top:20px;
+}
+
+#main {
+  background:       #ffcccc top left;
+  font-size:        105%;
+  padding:          15px;
+  margin:           0px 10px 10px 10px;
+  width:             420px;/*�������������ܿ�����߾���ڱ߾�ӱ߿��������*/
+  float:           left;
+}
+
+aside {
+  background:       #ffcccc bottom right;
+  font-size:        105%;
+  padding:          15px;
+  margin:           28px 10px 10px 470px;
+  height:            400px;
+}
+
+footer {
+  background-color: #ccffff;
+  color:            #954b4b;
+  text-align:       center;
+  padding:          15px;
+  margin:           10px;
+  font-size:        90%;
+  clear:             left;
+}
+
+h1 {
+  font-size:        120%;
+  color:            #954b4b;
+}
+
+
+a:link {
+  color:            #b76666;
+  text-decoration:  none;
+  border-bottom:    thin dotted #b76666;
+}
+a:visited {
+  color:            #675c47;
+  text-decoration:  none;
+  border-bottom:    thin dotted #675c47;
+}
+
+#allcontent {
+  width:             800px;
+  padding-top:5px;
+  padding-bottom:5px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+p#Click{
+                height: 0px;
+                visibility:hidden;
+                /*overflow: hidden;*/ 
+                /*display:none;������ʹ��ģ����ʧ����ռ�ݿռ䣬Ӱ�첼��*/
+}
+input:checked~p#Click{
+               visibility:visible;
+                /*overflow:visible;*/
+                /*display:block;*/
+}
