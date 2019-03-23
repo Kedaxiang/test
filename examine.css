@@ -1,0 +1,72 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    font: 16px"黑体", "Arial Narrow", HELVETICA;
+}
+header{
+    background-color: #3d3d3d;
+    height: 39px;
+}
+a#selected{
+    color: #1ba19d;
+}
+img{
+    vertical-align: middle;
+    border: 0;
+}
+nav{
+    font-size: 13px;
+    width: 100%;
+    line-height: 35px;
+    color: white;
+}
+.nav{
+    margin: 0;
+    min-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    line-height: -10px;
+}
+li{
+    display: inline;
+}
+nav a{
+    color: white;
+    text-decoration: none;
+}
+.nav_1 a{
+    color:black;
+    font-size: 20px;
+}
+.icon{
+    display: inline-block;
+}
+.line{
+    margin: 0 10px;
+}
+.line_1{
+    margin:0 0 0 190px;
+}
+.line_2{
+    margin:0 192px 0 0;
+}
+.line_3{
+    margin:0 0 0 190px;
+}
+.line_4{
+    margin:0 5px;
+}
+.tabbox{
+    height: 115px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.searchbox{
+    display: flex;
+    height: 380px;
+}
