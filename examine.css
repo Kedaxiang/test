@@ -1,72 +1,123 @@
-body{
+body {
     margin: 0px;
     padding: 0px;
     font: 16px"黑体", "Arial Narrow", HELVETICA;
 }
-header{
-    background-color: #3d3d3d;
-    height: 39px;
-}
-a#selected{
+a#selected {
     color: #1ba19d;
 }
-img{
+img {
     vertical-align: middle;
     border: 0;
 }
-nav{
+nav#nav-0 {
     font-size: 13px;
     width: 100%;
     line-height: 35px;
     color: white;
+    background-color: #3d3d3d;
+    height: 39px;
 }
-.nav{
-    margin: 0;
-    min-width: 1200px;
+.nav-1 {
+    width: 75vw;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
 }
-ul{
+ul {
     margin: 0;
     padding: 0;
-    line-height: -10px;
 }
-li{
+li {
     display: inline;
 }
-nav a{
+nav a {
     color: white;
     text-decoration: none;
 }
-.nav_1 a{
+.nav_1 a {
     color:black;
     font-size: 20px;
+    letter-spacing: 0px;
 }
-.icon{
+.icon {
     display: inline-block;
 }
-.line{
+.line {
     margin: 0 10px;
 }
-.line_1{
-    margin:0 0 0 190px;
+.line_2 {
+    margin: 0 10px;
 }
-.line_2{
-    margin:0 192px 0 0;
+.line_3 {
+    padding: 7px 0;
 }
-.line_3{
-    margin:0 0 0 190px;
-}
-.line_4{
-    margin:0 5px;
-}
-.tabbox{
+.tabbox {
     height: 115px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 75vw;
+    margin: 0 auto;
 }
-.searchbox{
+.searchbox {
+    background: url('images/picture.png') no-repeat center;
+    height: 376px;
+}
+form {
+    margin: 0;
+    padding: 0;
+}
+.flexbox{
     display: flex;
-    height: 380px;
+}
+.box{
+    padding: 0 218px;
+}
+.search {
+    padding-top: 220px;
+}
+.searchKey {
+    display: flex;
+    justify-content: left;
+}
+.searchInput {
+    width: 500px;
+    height: 45px;
+}
+.hot {
+    color: white;
+    font-size: 15px;
+    font-weight: lighter;
+}
+.rightside {
+    position: fixed;
+    top: 440px;
+    right: 0;
+    z-index: 200;
+}
+p {
+    margin: 5px;
+    color: white;
+}
+.code {
+    text-align: center;
+    width: 87px;
+    height: 80px;
+    padding-top: 13px; 
+    background-color: #6d6c6c;
+}
+.service {
+    text-align: center;
+    background-color: #6d6c6c;
+    margin-top: 5px;
+    padding-top: 13px;
+    height: 80px;
+}
+.btt{
+    text-align: center;
+    background-color: #6d6c6c;
+    margin-top: 5px;
+    padding-top: 13px;
+    height: 80px;
 }
