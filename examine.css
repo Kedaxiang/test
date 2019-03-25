@@ -1,7 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+}
 body {
-    margin: 0px;
-    padding: 0px;
-    font: 16px"黑体", "Arial Narrow", HELVETICA;
+    font: 17px"黑体", "Arial Narrow", HELVETICA;
 }
 a#selected {
     color: #1ba19d;
@@ -11,22 +13,18 @@ img {
     border: 0;
 }
 nav#nav-0 {
-    font-size: 13px;
-    width: 100%;
+    width: 1366px;
     line-height: 35px;
     color: white;
     background-color: #3d3d3d;
     height: 39px;
+    margin: auto;
 }
 .nav-1 {
     width: 75vw;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-}
-ul {
-    margin: 0;
-    padding: 0;
 }
 li {
     display: inline;
@@ -58,7 +56,7 @@ nav a {
     align-items: center;
     justify-content: space-between;
     width: 75vw;
-    margin: 0 auto;
+    margin: 25px auto;
 }
 .searchbox {
     background: url('images/picture.png') no-repeat center;
@@ -96,7 +94,7 @@ form {
     right: 0;
     z-index: 200;
 }
-p {
+.dis {
     margin: 5px;
     color: white;
 }
@@ -120,4 +118,84 @@ p {
     margin-top: 5px;
     padding-top: 13px;
     height: 80px;
+}
+.mI{
+    margin: 39px auto;
+}
+.more{
+    color: #1ba19d;
+    font-size: 24px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+.morebox{
+    display: flex;
+    width: 1078px;
+    margin:0 auto;
+}
+.tab{
+    width: 153px;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    line-height: 47px;
+}
+.block{
+    height: 47px;
+    display: block;
+    border: 2px solid #c6c6c6;
+    border-right: 1px;
+    background-color: #3d3d3d;
+    color: white;
+}
+li.activeTab{
+    color: #3d3d3d;
+    background-color: #fff;
+}
+.information{
+    border: 2px solid #c6c6c6;
+    height: 293px;
+    width: 925px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+.row{
+    flex-basis: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.item{
+    display: flex;
+}
+.content{
+    margin: 20px 42px 20px 0px;
+
+}
+.picture{
+    margin: 12px 10px 12px 37px;
+}
+.content_1{
+    font-size: 12px;
+    width: 219px;
+    color: #202020;
+}
+a.learnmore{
+    font-size: 10px;
+    text-decoration: none;
+    color: #1ba19d;
+    position: relative;
+    right: 0;
+    bottom: 0;
+}
+div.learnmore{
+    margin: 24px 0px 0px 166px; /*左边距应是685-509=176px，但与设计图看起来不相符，稍微修改*/
+}
+footer{
+    width: 1078px;
+    margin: 46px auto;
+    border: #202020 2px solid
+}
+.des{
+    display: flex;
 }
