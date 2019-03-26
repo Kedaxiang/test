@@ -38,6 +38,9 @@ nav a {
     font-size: 20px;
     letter-spacing: 0px;
 }
+.nav_1:hover a{
+    color: #8dd0ce;
+}
 .icon {
     display: inline-block;
 }
@@ -88,14 +91,27 @@ form {
     font-size: 15px;
     font-weight: lighter;
 }
+.key a{
+    text-decoration: none;
+    color: white;
+}
+.key:hover a{
+    color: #8dd0ce;
+}
 .rightside {
     position: fixed;
-    top: 400px;
+    top: 400px;  /*设计稿中为440px，但是特别影响美观，擅自修改*/
     right: 0;
     z-index: 200;
 }
-img#bigcode{
+#bigcode{
     display: none;
+}
+.thecode:hover #bigcode{
+    display: block; /*光标已到二维码是可以显示*/
+    position: fixed;
+    top: 338px;  /*相对于右栏要高62px*/
+    right: 87px; /*右边栏righyside的宽度为87px*/
 }
 .dis {
     margin: 5px;
@@ -124,6 +140,7 @@ img#bigcode{
 }
 a#back_to_top{
     text-decoration: none;
+    color: white;
 }
 a:visited#back_to_top{
     color: white;
