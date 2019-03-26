@@ -70,7 +70,7 @@ form {
     display: flex;
 }
 .box{
-    padding: 0 218px;
+    padding: 0 210px;
 }
 .search {
     padding-top: 220px;
@@ -80,7 +80,7 @@ form {
     justify-content: left;
 }
 .searchInput {
-    width: 500px;
+    width: 562px;
     height: 45px;
 }
 .hot {
@@ -90,9 +90,12 @@ form {
 }
 .rightside {
     position: fixed;
-    top: 440px;
+    top: 400px;
     right: 0;
     z-index: 200;
+}
+img#bigcode{
+    display: none;
 }
 .dis {
     margin: 5px;
@@ -118,6 +121,12 @@ form {
     margin-top: 5px;
     padding-top: 13px;
     height: 80px;
+}
+a#back_to_top{
+    text-decoration: none;
+}
+a:visited#back_to_top{
+    color: white;
 }
 .mI{
     margin: 39px auto;
@@ -160,8 +169,7 @@ li.activeTab{
     flex-wrap: wrap;
     align-content: space-between;
 }
-.row{
-    flex-basis: 100%;
+.row{    
     display: flex;
     justify-content: space-between;
 }
@@ -170,9 +178,10 @@ li.activeTab{
 }
 .content{
     margin: 20px 42px 20px 0px;
-
+    height: 100px;
+    position: relative;
 }
-.picture{
+.photo{
     margin: 12px 10px 12px 37px;
 }
 .content_1{
@@ -184,18 +193,59 @@ a.learnmore{
     font-size: 10px;
     text-decoration: none;
     color: #1ba19d;
-    position: relative;
+} 
+div.learnmore{
+    position: absolute;
     right: 0;
     bottom: 0;
-}
-div.learnmore{
-    margin: 24px 0px 0px 166px; /*左边距应是685-509=176px，但与设计图看起来不相符，稍微修改*/
 }
 footer{
     width: 1078px;
     margin: 46px auto;
-    border: #202020 2px solid
+    border-top: #202020 2px solid
 }
 .des{
     display: flex;
+}
+.white{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 172px;
+    width: 539px;
+    color: #3d3d3d
+}
+.content_3{
+    margin-left: 20px;
+}
+.black{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #3d3d3d;
+    color: #e7e7e7;
+    height: 172px;
+    width: 539px;
+}
+
+.item_1{
+    display: flex;
+    width: 269.5px;
+}
+.picture_white{
+    margin-top: 30px;
+}
+.picture_black{
+    margin-top: 30px;
+    margin-left: 37px;
+}
+.big{
+    font-size: 20px;
+    font-weight: bolder;
+    margin-top: 23px;
+}
+.small{
+    font-size: 11px;
+    font-weight: lighter;
+    margin-top: 8px;
 }
