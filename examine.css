@@ -157,14 +157,18 @@ a:visited#back_to_top{
 .morebox{
     display: flex;
     width: 1078px;
+    height: 279px;
     margin:0 auto;
 }
-.tab{
+#tab{
     width: 153px;
     margin: 0px;
     padding: 0px;
     text-align: center;
     line-height: 47px;
+}
+.morebox #tab li{
+    cursor: pointer;
 }
 .block{
     height: 47px;
@@ -182,24 +186,33 @@ li.activeTab{
     border: 2px solid #c6c6c6;
     height: 293px;
     width: 925px;
-    display: flex;
-    flex-wrap: wrap;
-    align-content: space-between;
+}
+.change{   
+    display: none;
+    border: 2px solid #c6c6c6;
+    height: 293px;
+    width: 925px;
+}
+.active{
+    display: block;
 }
 .row{    
     display: flex;
-    justify-content: space-between;
+}
+.row_2{
+    display: flex;
+    margin-top: 27px;
 }
 .item{
     display: flex;
 }
 .content{
-    margin: 20px 42px 20px 0px;
+    margin: 20px 42px 8px 0px;
     height: 100px;
     position: relative;
 }
 .photo{
-    margin: 12px 10px 12px 37px;
+    margin: 12px 10px 0px 37px;
 }
 .content_1{
     font-size: 12px;
