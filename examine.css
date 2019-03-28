@@ -26,12 +26,18 @@ nav#nav-0 {
     display: flex;
     justify-content: space-between;
 }
+ul#first{
+    min-width: 430px;
+}
 li {
     display: inline;
 }
 nav a {
     color: white;
     text-decoration: none;
+}
+nav#introduce{
+    width: 520px;
 }
 .nav_1 a {
     color:black;
@@ -44,11 +50,17 @@ nav a {
 .icon {
     display: inline-block;
 }
+.center{
+    min-width: 141px;
+}
+.loginbox{
+    min-width: 117px;
+}
 .line {
     margin: 0 10px;
 }
 .line_2 {
-    margin: 0 10px;
+    margin: 0 5px;
 }
 .line_3 {
     padding: 7px 0;
@@ -153,7 +165,7 @@ a:visited#back_to_top{
     color: white;
 }
 .mI{
-    margin: 39px auto;
+    margin: 39px 220px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -242,7 +254,7 @@ div.learnmore{
 }
 footer{
     width: 1078px;
-    margin: 46px auto;
+    margin: 46px 220px 66px 220px;
     border-top: #202020 2px solid
 }
 .des{
