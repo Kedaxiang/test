@@ -69,6 +69,8 @@ nav a {
     background: url('images/picture.png') no-repeat center;
     height: 376px;
     min-width: 1366px;
+    display: flex;
+    justify-content: center;
 }
 form {
     margin: 0;
@@ -152,12 +154,16 @@ a:visited#back_to_top{
 }
 .mI{
     margin: 39px auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 1078px;
 }
 .more{
     color: #1ba19d;
     font-size: 24px;
-    margin:0 auto 5px auto;
-    text-align: center;
+    margin-bottom: 5px;
+    width: 154px;
 }
 .morebox{
     display: flex;
