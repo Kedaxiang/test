@@ -15,10 +15,15 @@ window.onload = function(){                     //窗口加载完成后执行fun
     }
 }
 window.onload = function(){
+    var res = document.getElementById('register');
+    res.onclick = showagain;
+    function showagain(){
+       prompt('username');
+       prompt('passport');
+    }
     var oBtn = document.getElementById('login');
     oBtn.onclick = show;
     function show(){
-       prompt('username');
-       prompt('passport');
+        alert('请先注册');
     }
 }
