@@ -1,4 +1,15 @@
 window.onload = function(){                     //窗口加载完成后执行function{}这个函数
+    var res = document.getElementById('register');
+    res.onclick = showagain;
+    function showagain(){
+       prompt('username');
+       prompt('passport');
+    }
+    var oBtn = document.getElementById('login');
+    oBtn.onclick = show;
+    function show(){
+        alert('请先注册');
+    }
     var tab = document.getElementById("tab");
     var lis = tab.getElementsByTagName('li');
     var cha = document.getElementsByClassName('change');
@@ -13,17 +24,5 @@ window.onload = function(){                     //窗口加载完成后执行fun
         lis[this.num].classList.add("activeTab");
         }
     }
-}
-window.onload = function(){
-    var res = document.getElementById('register');
-    res.onclick = showagain;
-    function showagain(){
-       prompt('username');
-       prompt('passport');
-    }
-    var oBtn = document.getElementById('login');
-    oBtn.onclick = show;
-    function show(){
-        alert('请先注册');
-    }
+
 }

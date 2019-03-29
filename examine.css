@@ -165,6 +165,7 @@ a:visited#back_to_top{
     font-size: 24px;
     margin-bottom: 5px;
     width: 154px;
+    font-weight: bolder;
 }
 .morebox{
     display: flex;
@@ -214,11 +215,11 @@ li.activeTab{
 .underline::after {
     content: ''; /*插入一个空文本，只让下划线存在*/
     position: absolute;
-    left: 100px;
+    left: 40px;
     bottom: 50px;
     transform: scaleX(0); /*设置x方向缩放*/
     height: 2px;
-    width: 80%;
+    width: 90%;
     background-color: #1395ba;
     transition:  1s;
 }
@@ -256,6 +257,7 @@ a.learnmore{
     font-size: 10px;
     text-decoration: none;
     color: #1ba19d;
+
 } 
 div.learnmore{
     position: absolute;
