@@ -27,7 +27,7 @@ nav#nav-0 {
     justify-content: space-between;
 }
 ul#first{
-    min-width: 430px;
+    min-width: 430px;  /*固定宽度防止窗口宽度变窄时文本往下*/
 }
 li {
     display: inline;
@@ -47,23 +47,20 @@ nav#introduce{
 .nav_1:hover a{
     color: #8dd0ce;
 }
-.icon {
-    display: inline-block;
-}
 .center{
     min-width: 141px;
 }
 .loginbox{
-    min-width: 117px;
+    min-width: 117px;  
 }
 .line {
-    margin: 0 10px;
+    margin: 0 10px;   /*使两个li标签之间有间距*/
 }
 .line_2 {
-    margin: 0 5px;
+    margin: 0 5px;      /*使两个li标签之间有间距*/
 }
 .line_3 {
-    padding: 7px 0;
+    padding: 7px 0;    /*使两个li标签之间有间距*/
 }
 .tabbox {
     height: 115px;
@@ -74,35 +71,27 @@ nav#introduce{
     width: 75vw;
     margin: 0 auto;
     display: flex;
-    align-items: center;
+    align-items: center;   /*文本水平居中*/
     justify-content: space-between;
 }
 .searchbox {
     background: url('images/picture.png') no-repeat center;
     height: 376px;
-    min-width: 1366px;
+    min-width: 1366px;     /*固定宽度大小，防止背景图片在缩小宽度时，滚动水平滚动条时右边出现空白*/
     display: flex;
     justify-content: center;
-}
-form {
-    margin: 0;
-    padding: 0;
 }
 .flexbox{
     display: flex;
 }
-.box{
-    padding: 0 210px;
-}
 .search {
-    padding-top: 220px;
+    padding-top: 220px;        /*往上增加内边距*/
 }
 .searchKey {
-    display: flex;
-    justify-content: left;
+    display: flex;        /*使图片和输入条没有间距*/
 }
 .searchInput {
-    width: 562px;
+    width: 562px;          /*设置输入条宽度以及高度*/
     height: 45px;
 }
 .hot {
@@ -118,7 +107,7 @@ form {
     color: #8dd0ce;
 }
 .rightside {
-    position: fixed;
+    position: fixed;     /*生成绝对定位的元素，相对于浏览器窗口进行定位*/
     top: 400px;  /*设计稿中为440px，但是特别影响美观，擅自修改*/
     right: 0;
     z-index: 200;
@@ -127,7 +116,7 @@ form {
     display: none;
 }
 .thecode:hover #bigcode{
-    display: block; /*光标已到二维码是可以显示*/
+    display: block; /*光标移到二维码是可以显示*/
     position: fixed;
     top: 338px;  /*相对于右栏要高62px*/
     right: 87px; /*右边栏righyside的宽度为87px*/
@@ -165,10 +154,10 @@ a:visited#back_to_top{
     color: white;
 }
 .mI{
-    margin: 39px 220px;
-    display: flex;
+    margin: 39px 220px;     /*定死*/
+    display: flex;          /*内部flex布局*/
     justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap;        /*控制换行*/
     width: 1078px;
 }
 .more{
@@ -191,7 +180,7 @@ a:visited#back_to_top{
     line-height: 47px;
 }
 .morebox #tab li{
-    cursor: pointer;
+    cursor: pointer;      /*控制光标类型*/
 }
 .block{
     height: 47px;
@@ -215,6 +204,27 @@ li.activeTab{
     border: 2px solid #c6c6c6;
     height: 293px;
     width: 925px;
+}
+.underline{
+    font-size: 200px;
+    text-shadow: 5px 5px 5px #6d6c6c; /*水平阴影 垂直阴影 模糊距离（可选） 颜色（可选）*/
+    text-align: center;
+    position: relative;
+}
+.underline::after {
+    content: ''; /*插入一个空文本，只让下划线存在*/
+    position: absolute;
+    left: 100px;
+    bottom: 50px;
+    transform: scaleX(0); /*设置x方向缩放*/
+    height: 2px;
+    width: 80%;
+    background-color: #1395ba;
+    transition:  1s;
+}
+.underline:hover::after{
+    transform: scaleX(1); /*1用于定义缩放转换*/
+    transition:  1s; 
 }
 .active{
     display: block;
