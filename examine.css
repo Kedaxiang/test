@@ -36,6 +36,9 @@ nav a {
     color: white;
     text-decoration: none;
 }
+.Blockbox{
+    margin: 0 50px;
+}
 nav#introduce{
     width: 520px;
 }
@@ -47,8 +50,14 @@ nav#introduce{
 .nav_1:hover a{
     color: #8dd0ce;
 }
+.blockbox{
+    margin: 0 60px;
+}
 .center{
     min-width: 141px;
+}
+.BlockBox{
+    margin: 0 80px;
 }
 .loginbox{
     min-width: 117px;  
