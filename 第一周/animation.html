@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="animation.css">
+    <title>进度条</title>
+</head>
+<body>
+    <div class="circle_wrapper">
+        <div class="wrapper right_box">
+            <div class="circle_progress rightcircle"></div>
+        </div>
+         <div class="wrapper left_box">
+            <div class="circle_progress leftcircle"></div>
+        </div>
+    </div>
+    <div id="loading">
+        <div id="loadtext">0%</div>
+        <div id="cover">加载完成</div>
+    </div>
+    <script>
+        var i=0;
+        function circle(){
+            i++;
+            document.getElementById("loadtext").innerText = i + "%";
+            if(i<100) 
+            setTimeout("circle()",100); //当i<100时，执行circle()函数
+        }
+        setTimeout("circle()",100); //0.1s后执行circle()函数，并且计时器有时会有延迟，setInterval内执行的计算过于耗时
+        var e = document.getElementsByClassName('rightcircle');
+	    e.addEventListener("animationend", function() {
+	        document.getElementById("cover").style.display = "block";
+	    });
+    </script>
+</body>
+</html>
