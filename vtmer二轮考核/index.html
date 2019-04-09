@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <title>推书</title>
+</head>
+<body>
+    <div id="container">
+        <div id="loading">
+            <div id="content">Loading</div>
+            <div class="item a"></div>
+            <div class="item b"></div>
+            <div class="item c"></div>
+        </div>
+    </div>
+    <div class="main">
+        <div id="user">
+            <img src="images/user.png" id="btnLogin">
+        </div>
+        <div id="login">
+            <div class="loginCon">
+                <div id="close"></div> <!--关闭按钮-->
+                <div id="smallLogo">
+                    <img src="images/logo-small.png">
+                </div>
+            <form method="get">
+                <table>
+                    <tr id="top">
+                        <td>账</td>
+                        <td class="line">号:</td>
+                        <td>
+                            <input type="text" placeholder="用户名" class="userLogin" id="username">
+                        </td>
+                    </tr>
+                    <tr id="middle">
+                        <td>密</td>
+                        <td class="line">码:</td>
+                        <td>
+                            <input type="password" placeholder="*******" class="userLogin" id="password">
+                        </td>
+                    </tr>
+                    <td colspan="2" id="interaction">
+                        <div id="shadow"><input type="button" value="登录" id="btn"></div>
+                        <a href="#">注册</a>
+                    </td>
+                </table>
+            </form>
+            </div>
+        </div>
+        <div class="box">
+            <div class="logo">
+                <img src="images/logo.png">
+            </div>
+            <p>
+                The books that know you
+            </p>
+        </div>
+        <div class="search">
+            <div class="search_box">
+                <input type="text" placeholder="搜索" class="search_input">
+                <div class="icon"></div>
+            </div>
+        </div>
+        <div class="classify">
+            <ul>
+                <li>
+                    大类1
+                </li>
+                <li>
+                    大类2
+                </li>
+                <li>
+                    大类3
+                </li>
+                <li>
+                    大类4
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="index.js"></script>
+</body>
+</html>
