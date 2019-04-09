@@ -1,0 +1,320 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font: 17px"黑体", "Arial Narrow", HELVETICA;
+}
+a#selected {
+    color: #1ba19d;
+}
+img {
+    vertical-align: middle;
+}
+nav#nav-0 {
+    width: 1366px;
+    line-height: 35px;
+    color: white;
+    background-color: #3d3d3d;
+    height: 39px;
+    margin: auto;
+}
+.nav-1 {
+    width: 75vw;    /*视窗百分比75%自适应*/
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+ul#first{
+    min-width: 430px;  /*固定宽度防止窗口宽度变窄时文本往下*/
+}
+li {
+    display: inline;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+}
+.Blockbox{
+    margin: 0 50px;
+}
+nav#introduce{
+    width: 520px;
+}
+.nav_1 a {
+    color:black;
+    font-size: 20px;
+}
+.nav_1:hover a{
+    color: #8dd0ce;
+}
+.blockbox{
+    margin: 0 60px;
+}
+.center{
+    min-width: 141px;
+}
+.BlockBox{
+    margin: 0 80px;
+}
+.loginbox{
+    min-width: 117px;  
+}
+.line {
+    margin: 0 10px;   /*使两个li标签之间有间距*/
+}
+.line_2 {
+    margin: 0 5px;      /*使两个li标签之间有间距*/
+}
+.line_3 {
+    padding: 7px 0;    /*使两个div标签竖直之间有间距*/
+}
+.tabbox {
+    height: 115px;
+    width: 1366px;
+    margin: 25px auto;
+}
+.includetabbox{
+    width: 75vw;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;   /*文本水平居中*/
+    justify-content: space-between;
+}
+.searchbox {
+    background: url('images/picture.png') no-repeat center;
+    height: 376px;
+    min-width: 1366px;     /*固定宽度大小，防止背景图片在缩小宽度时，滚动水平滚动条时右边出现空白*/
+    display: flex;
+    justify-content: center;
+}
+.search {
+    padding-top: 220px;        /*往上增加内边距*/
+}
+.searchKey {
+    display: flex;        /*使图片和输入条没有间距*/
+}
+.searchInput {
+    width: 562px;          /*设置输入条宽度以及高度*/
+    height: 45px;
+}
+.hot {
+    color: white;
+    font-size: 15px;
+    font-weight: lighter;
+}
+.key a{
+    text-decoration: none;
+    color: white;
+}
+.key:hover a{
+    color: #8dd0ce;
+}
+.rightside {
+    position: fixed;     /*生成绝对定位的元素，相对于浏览器窗口进行定位*/
+    top: 400px;  /*设计稿中为440px，但是特别影响美观，擅自修改*/
+    right: 0;
+    z-index: 200;
+}
+#bigcode{
+    display: none;
+}
+.thecode:hover #bigcode{
+    display: block; /*光标移到二维码是可以显示*/
+    position: fixed;
+    top: 338px;  /*相对于右栏要高62px*/
+    right: 87px; /*右边栏righyside的宽度为87px*/
+}
+.dis {
+    margin: 5px;
+    color: white;
+}
+.code {
+    text-align: center;
+    width: 87px;
+    height: 80px;
+    padding-top: 13px; 
+    background-color: #6d6c6c;
+}
+.service {
+    text-align: center;
+    background-color: #6d6c6c;
+    margin-top: 5px;
+    padding-top: 13px;
+    height: 80px;
+}
+.btt{
+    text-align: center;
+    background-color: #6d6c6c;
+    margin-top: 5px;
+    padding-top: 13px;
+    height: 80px;
+}
+a#back_to_top{
+    text-decoration: none;
+    color: white;
+}
+a:visited#back_to_top{
+    color: white;
+}
+.mI{
+    margin: 39px 220px;     /*定死*/
+    display: flex;          /*内部flex布局*/
+    justify-content: center;
+    flex-wrap: wrap;        /*控制换行*/
+    width: 1078px;
+}
+.more{
+    color: #1ba19d;
+    font-size: 24px;
+    margin-bottom: 5px;
+    width: 154px;
+    font-weight: bolder;
+}
+.morebox{
+    display: flex;
+    width: 1078px;
+    height: 279px;
+    margin:0 auto;
+}
+#tab{
+    width: 153px;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    line-height: 47px;
+}
+.morebox #tab li{
+    cursor: pointer;      /*控制光标类型*/
+}
+.block{
+    height: 47px;
+    display: block;
+    border: 2px solid #c6c6c6;
+    border-right: 1px;
+    background-color: #3d3d3d;
+    color: white;
+}
+li.activeTab{
+    color: #3d3d3d;
+    background-color: #fff;
+}
+.information{
+    border: 2px solid #c6c6c6;
+    height: 293px;
+    width: 925px;
+}
+.change{   
+    display: none;      
+    border: 2px solid #c6c6c6;
+    height: 293px;
+    width: 925px;
+}
+.underline{
+    font-size: 200px;
+    text-shadow: 5px 5px 5px #6d6c6c; /*水平阴影 垂直阴影 模糊距离（可选） 颜色（可选）*/
+    text-align: center;
+    position: relative;
+}
+.underline::after {
+    content: ''; /*插入一个空文本，只让下划线存在*/
+    position: absolute;     /*相对于其父元素即大的框*/
+    left: 40px;
+    bottom: 50px;
+    transform: scaleX(0); /*设置x方向缩放*/
+    height: 2px;        /*下划线的高度*/
+    width: 90%;
+    background-color: #1395ba;      /*下划线的颜色*/
+    transition:  1s;
+}
+.underline:hover::after{
+    transform: scaleX(1); /*1用于定义倍数*/
+    transition:  1s; 
+}
+.active{
+    display: block;     /*覆盖上面change的display:none*/
+}
+.row{    
+    display: flex;
+}
+.row_2{
+    display: flex;
+    margin-top: 27px;
+}
+.item{
+    display: flex;
+}
+.content{
+    margin: 20px 42px 8px 0px;
+    height: 100px;
+    position: relative;
+}
+.photo{
+    margin: 12px 10px 0px 37px;
+}
+.content_1{
+    font-size: 12px;
+    width: 219px;
+    color: #202020;
+}
+a.learnmore{
+    font-size: 10px;
+    text-decoration: none;
+    color: #1ba19d;
+
+} 
+div.learnmore{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+footer{
+    width: 1078px;
+    margin: 46px 220px 66px 220px;
+    border-top: #202020 2px solid
+}
+.des{
+    display: flex;
+}
+.white{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 172px;
+    width: 539px;
+    color: #3d3d3d
+}
+.content_3{
+    margin-left: 20px;
+}
+.black{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #3d3d3d;
+    color: #e7e7e7;
+    height: 172px;
+    width: 539px;
+}
+
+.item_1{
+    display: flex;
+    width: 269.5px;
+}
+.picture_white{
+    margin-top: 30px;
+}
+.picture_black{
+    margin-top: 30px;
+    margin-left: 37px;
+}
+.big{
+    font-size: 20px;
+    font-weight: bolder;
+    margin-top: 23px;
+}
+.small{
+    font-size: 11px;
+    font-weight: lighter;
+    margin-top: 8px;
+}
