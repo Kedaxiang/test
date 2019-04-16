@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    min-width: 1280px;
+    font-family: '微软雅黑'；
+}
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 52px;
+    background: #fff;
+    width: 1280px;
+    margin: auto;
+}
+header > img {
+    width: 72px;
+    height: 35px;
+}
+#line {
+    position: relative;
+    height: 26px;
+}
+#search {
+    height: 25px;
+    width: 260px;
+    border: 1px solid #979797;
+    border-radius: 15px;
+    outline: none;
+    text-indent: 15px;
+}
+#icon {
+    width: 18px;
+    height: 18px;
+    background: url(../images/icon.png) no-repeat;
+    position: absolute;
+    top: 5px;
+    right: 14px;
+    z-index: 5;
+}
+#container {
+    position: relative;
+    width: 1280px;
+    height: 193px;
+    overflow: hidden;
+    margin: auto;
+}
+#list {
+    position: absolute;  /*可以改变left属性值*/
+    z-index: 1;
+    height: 193px;
+}
+#list img {
+    float: left;    /*清除img之间的空隙*/
+    width: 1280px;
+    height: 193px;
+}
+#buttons {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 20px;
+    z-index: 2;
+    height: 10px;
+    width: 135px;
+    display: flex;
+    justify-content: space-between;
+}
+#buttons span {
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #d9d2cf;
+    cursor: pointer;
+}
+#buttons .on {
+    background: #4d4947;
+}
+.classify-box{
+    width: 1280px;
+    height: 1255px;
+    margin: 0 auto;
+    background: #f4f4f4;
+    position: relative;
+}
+ul,
+li {
+    list-style: none;
+}
+ul#nav  {
+    position: absolute;
+    top: 32px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 915px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e1e1e1;
+}
+#title {
+    color: #828282;
+}
+.classify {
+    float: left;
+    margin-right: 26px;
+    font: 14px #292929;
+}
+#selected {
+    color: #eba155;
+}
+#post {
+    position: absolute;
+    bottom: 245px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    height: 20px;
+    width: 195px;
+}
+#post > li {
+    display: inline-block;
+    width: 20px;
+    border-radius: 50%;
+    text-align: center;
+}
+.arrow {
+    text-decoration: none;
+    color: #000;
+}
+.page {
+    background: #444;
+    color: #fff;
+}
+.number {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 220px;
+    width: 47px;
+    margin: auto;
+}
