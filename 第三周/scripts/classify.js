@@ -11,25 +11,25 @@ Mock.mock('http://test.cn/class', {
                         }]
                     }]
                });
-                var book = document.getElementById('flex-box');
-                var oBtn = document.getElementById('btn');
-                var total = document.getElementById('total');
-                var prev = document.getElementById('prev');
-                var next = document.getElementById('next');
-                    function createbook(number){
-                        var n = 0;
-                        if(number.length % 8 == 0) {                        //动态计算页数
-                           n = Math.floor(number.length / 8);
-                        } else{
-                           n = Math.ceil(number.length / 8);
-                        }
-                        total.innerHTML = '共' + n + '页';
-                        for(var i = 1;i <= n;i++) {                    //创建页数
-                            cli = document.createElement('li');
-                            cli.innerHTML = i;
-                            cli.className = 'number';
-                            oBtn.appendChild(cli);
-                        }      
+var book = document.getElementById('flex-box');
+var oBtn = document.getElementById('btn');
+var total = document.getElementById('total');
+var prev = document.getElementById('prev');
+var next = document.getElementById('next');
+    function createbook(number){
+        var n = 0;
+        if(number.length % 8 == 0) {                        //动态计算页数
+            n = Math.floor(number.length / 8);
+        } else{
+            n = Math.ceil(number.length / 8);
+        }
+        total.innerHTML = '共' + n + '页';
+        for(var i = 1;i <= n;i++) {                    //创建页数
+            cli = document.createElement('li');
+            cli.innerHTML = i;
+            cli.className = 'number';
+            oBtn.appendChild(cli);
+        }      
                         /*if(number.length <= 24) {
                             for(var i = 1; i <= 24; i++) {
                                 content = document.createElement('div');
@@ -157,58 +157,119 @@ Mock.mock('http://test.cn/class', {
                                 }
                             }
                         }*/
-                        for(var i = 0; i <= number.length - 1; i++) {              //创建书本div
-                            var star = number[i].string;
-                            var title = number[i].title;
-                            var author = number[i].author;
-                            content = document.createElement('div');
-                            content.className = 'book';
-                            picture = document.createElement('div');
-                            picture.className = 'bookpic';
-                            information = document.createElement('div');
-                            information.className = 'info';
-                            information.innerHTML = '<p>'+star+'</p>'+   '<p>'+title+'</p>'+'<p>'+author+'</p>';
-                            content.appendChild(picture);
-                            content.appendChild(information);
-                            book.appendChild(content);
-                        }
-                        var bookpic = book.getElementsByClassName('book');
-                        var ali = oBtn.getElementsByTagName('li');
-                        for (var j = 0; j < number.length; j++) {    //全部隐藏
-                            bookpic[j].style.display = "none";
-                        }
-                        for (var j = 0; j < 8 ; j++){           //隐藏完后显示前8张
-                            bookpic[j].style.display = "block";
-                        }
-                        for (var i = 0; i <= n - 1; i++) {
-                            ali[i].index = i;
-                            ali[0].className = 'selected';
+        for(var i = 0; i <= number.length - 1; i++) {              //创建书本div
+            var star = number[i].string;
+            var title = number[i].title;
+            var author = number[i].author;
+            content = document.createElement('div');
+            content.className = 'book';
+            picture = document.createElement('div');
+            picture.className = 'bookpic';
+            information = document.createElement('div');
+            information.className = 'info';
+            information.innerHTML = '<p>'+star+'</p>'+   '<p>'+title+'</p>'+'<p>'+author+'</p>';
+            content.appendChild(picture);
+            content.appendChild(information);
+            book.appendChild(content);
+        }
+        var bookpic = book.getElementsByClassName('book');
+        var ali = oBtn.getElementsByTagName('li');
+        for (var j = 0; j < number.length; j++) {    //全部隐藏
+            bookpic[j].style.display = "none";
+        }
+        for (var j = 0; j < 8 ; j++){           //隐藏完后显示前8张
+            bookpic[j].style.display = "block";
+        }
+        for (var i = 0; i <= n - 1; i++) {
+            ali[i].index = i;
+            ali[0].className = 'selected';
                
-                            ali[i].onclick = function() {
-                                b = this.index;
-                                if(number.length - b * 8 < 8) {
-                                    var n = 8 - (number.length - b * 8);
-                                    console.log(n);
-                                    for(var i = 1;i <= n; i++) {
-                                        content2 = document.createElement('div');
-                                        content2.className = 'book';
-                                        book.appendChild(content2);
-                                    }
-                                }
-                                for (var j = 0; j < ali.length; j++) {
-                                    ali[j].className = 'number';
-                                }
-                                this.className = 'selected';
-                                for (var j = 0; j < number.length; j++) {    //全部隐藏
-                                    bookpic[j].style.display = "none";
-                                }
-                                for (var j = (b * 8); j < (b + 1) * 8; j++) {
-                                    bookpic[j].style.display = "block";
-                                }
-                                window.scrollTo(0,0);
-                            }
-                        }
+            ali[i].onclick = function() {
+                b = this.index;
+                if(number.length - b * 8 < 8) {
+                    var n = 8 - (number.length - b * 8);
+                    console.log(n);
+                    for(var i = 1;i <= n; i++) {
+                        content2 = document.createElement('div');
+                        content2.className = 'book';
+                        book.appendChild(content2);
                     }
+                }
+                for (var j = 0; j < ali.length; j++) {
+                    ali[j].className = 'number';
+                }
+                this.className = 'selected';
+                for (var j = 0; j < number.length; j++) {    //全部隐藏
+                    bookpic[j].style.display = "none";
+                }
+                for (var j = (b * 8); j < (b + 1) * 8; j++) {
+                    bookpic[j].style.display = "block";
+                }
+                window.scrollTo(0,0);
+            }
+        }
+        var base = 0;
+        for(var m = 0; m < ali.length; m++) {
+            ali[m].base = m;
+        }
+        prev.onclick = function() {
+            base = document.getElementsByClassName('selected')[0].base;
+            base--;
+            console.log(ali[2].base);
+            if (base < 0){
+                base = 0;
+            }
+            if(number.length - base * 8 < 8) {
+                var n = 8 - (number.length - base * 8);
+                console.log(n);
+                for(var i = 1;i <= n; i++) {
+                    content2 = document.createElement('div');
+                    content2.className = 'book';
+                    book.appendChild(content2);
+                }
+            }
+            for(var i = 0; i < ali.length; i++) {
+                if(ali[i].className == 'selected') {
+                    ali[i].className = 'number';
+                }
+            }
+            ali[base].className = 'selected';
+            for(var j = 0; j < bookpic.length; j++) {
+                bookpic[j].style.display = 'none';
+            }
+            for(var j = base * 8; j < (base + 1)  * 8; j++) {
+                bookpic[j].style.display = 'block';
+            }
+        }
+        next.onclick = function() {
+            base = document.getElementsByClassName('selected')[0].base;
+            base++;
+            if (base > ali.length - 1){
+                base = ali.length - 1;
+            }
+            if(number.length - base * 8 < 8) {
+                var n = 8 - (number.length - base * 8);
+                console.log(n);
+                for(var i = 1;i <= n; i++) {
+                    content2 = document.createElement('div');
+                    content2.className = 'book';
+                    book.appendChild(content2);
+                }
+            }
+            for(var i = 0; i < ali.length; i++) {
+                if(ali[i].className == 'selected') {
+                    ali[i].className = 'number';
+                }
+            }
+            ali[base].className = 'selected';
+            for(var j = 0; j < bookpic.length; j++) {
+                bookpic[j].style.display = 'none';
+            }
+            for(var j = base * 8; j < (base + 1) * 8; j++) {
+                bookpic[j].style.display = 'block';
+            }
+        }
+    }
 window.onload =function(){
     var oBox = document.getElementById('container');
     var pic = document.getElementById('list');
@@ -282,7 +343,6 @@ window.onload =function(){
                   var number = data.bookclass[0].bookInfo.length;
                   console.log(number);
                   createbook(info);
-                  showDetails(info);
             }
         }
     ) 
