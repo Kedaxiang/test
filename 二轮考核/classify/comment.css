@@ -1,0 +1,94 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: '微软雅黑';
+}
+#outside{
+    position: absolute;
+    top: 800px;
+    left: 0;
+    right: 0;
+    width: 760px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0 50px 15px;
+}
+
+#outside h3{
+    width: 70%;
+    margin: 5px auto;
+    border-bottom: 1px solid #E7EAEE;
+}
+
+#outside .comment1{
+    width: 70%;
+    margin:  auto;
+    color: #BBBBBB;
+    font-size: 12px;
+    border-bottom: 1px dashed #E7EAEE;
+    position: relative;
+}
+
+#outside  time{
+    float: right;
+}
+
+#outside .comment1 span{
+    color: #5979B2;
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+#outside .comment1 p{
+    font-size: 16px;
+    color: black;
+}
+
+#outside h4{
+    width: 70%;
+    margin: 15px auto;
+    color: #404E73;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#outside #addComment{
+    width: 70%;
+    margin: 0 auto;
+    font-size: 12px;
+    color: #BBBBBB;
+}
+
+#outside #name{
+    width: 200px;
+    border: 1px solid #D9E2EF;
+}
+
+#outside #comContent{
+    width: 600px;
+    height: 100px;
+    resize: none;
+    border: 1px solid #D9E2EF;
+    vertical-align: text-top;
+}
+
+#outside button{
+    width: 100px;
+    height: 30px;
+    background-color: #2D46A3;
+    color: white;
+    border: hidden;
+    float: right;
+    margin: 15px 100px;
+}
+.del {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    text-decoration: underline;
+    color: aqua;
+    cursor: pointer;
+}
+.del:hover {
+    color: #2D46A3;
+}

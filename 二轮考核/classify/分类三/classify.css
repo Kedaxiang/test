@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    min-width: 1280px;
+    font-family: '微软雅黑'；
+}
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 52px;
+    background: #fff;
+    width: 1280px;
+    margin: auto;
+}
+header > img {
+    width: 72px;
+    height: 35px;
+}
+#line {
+    position: relative;
+    height: 26px;
+}
+#search {
+    height: 25px;
+    width: 260px;
+    border: 1px solid #979797;
+    border-radius: 15px;
+    outline: none;
+    text-indent: 15px;
+}
+#icon {
+    width: 18px;
+    height: 18px;
+    background: url(../../images/icon.png) no-repeat;
+    position: absolute;
+    top: 5px;
+    right: 14px;
+    z-index: 5;
+}
+#container {
+    position: relative;
+    width: 1280px;
+    height: 193px;
+    overflow: hidden;
+    margin: auto;
+}
+#list {
+    position: absolute;  /*可以改变left属性值*/
+    z-index: 1;
+    height: 193px;
+    width: 400%;
+}
+#list img {
+    float: left;    /*清除img之间的空隙*/
+    width: 1280px;
+    height: 193px;
+}
+#buttons {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 20px;
+    z-index: 2;
+    height: 10px;
+    width: 135px;
+    display: flex;
+    justify-content: space-between;
+}
+#buttons span {
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #d9d2cf;
+    cursor: pointer;
+}
+#buttons .on {
+    background: #4d4947;
+}
+.classify-box{
+    width: 1280px;
+    height: 1255px;
+    margin: 0 auto;
+    background: #f4f4f4;
+    position: relative;
+}
+ul,
+li {
+    list-style: none;
+}
+ul#nav  {
+    position: absolute;
+    top: 32px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 915px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e1e1e1;
+    z-index: 20;
+}
+#title {
+    color: #828282;
+}
+.classify {
+    float: left;
+    margin-right: 26px;
+    font: 14px #292929;
+    cursor: pointer;
+}
+#selected {
+    color: #eba155;
+}
+#post {
+    position: absolute;
+    bottom: 245px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    height: 20px;
+    width: 195px;
+}
+#post > li {
+    display: inline-block;
+    width: 20px;
+    border-radius: 50%;
+    text-align: center;
+}
+.result-box {
+    background: #f4f4f4;
+    height: 1255px;
+    width: 1280px;
+    margin: auto;
+}
+#box {
+    position: relative;
+    width: 1040px;
+    height: 1200px;
+    margin: auto;
+    background: #f4f4f4;
+}
+#flex-box {
+    position: absolute;
+    top: 85px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 830px;
+    width: 915px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+#page {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 170px;
+    height: 45px;
+}
+#btn {
+    height: 20px;
+    width: 140px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2px;
+}
+.arrow {
+    display: inline;
+    text-decoration: none;
+    color: #000;
+}
+#left {
+    float: left;
+}
+#right {
+    float: right;
+}
+#total {
+    width: 170px;
+    text-align: center;
+}
+.book{
+    margin-bottom: 80px;
+    width: 201px;
+    height: 436px;
+}
+.bookpic {
+    cursor: pointer;
+    width: 200px;
+    height: 280px;
+    background: url(../../images/loading.jpg) no-repeat center;
+}
+.info {
+    margin: 18px auto 0;
+    width: 110px;
+    border-bottom: 1px solid #e0e0e0;
+    height: 125px;
+    padding-bottom: 16px;
+}
+.info > p {
+    text-align: center;
+    margin-top: 10px;
+}
+.selected {
+    background: #444; 
+    color: #fff;
+    width:20px; 
+    height:20px;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+}
+.number {
+    background: #f4f4f4; 
+    color: #444;
+    width:20px; 
+    height:20px;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+}
