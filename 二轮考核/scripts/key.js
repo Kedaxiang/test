@@ -15,16 +15,17 @@ function key() {
     for(var i = 0; i < book.length; i++) {
         book[i].style.display="none";           
         //显示搜索的内容
-        if(name[i].innerText.indexOf(arr)!=-1) {
+        if(name[i].innerHTML.indexOf(arr)!=-1) {
             book[i].style.display="block";      
-        }
+        } 
     }
-    for(var j = 0; j < book.length - 1; j++) {
+    for(var j = 0; j <= book.length - 1; j++) {
         if(book[j].style.display == 'block') {
             //计算显示的数量
             n++;                 
+            book[j].classList.add('show')
         }
-    }
+    }    
     console.log(n);
     m = n;
     console.log(m);
@@ -51,9 +52,105 @@ function key() {
         cli.className = 'number';
         oBtn.appendChild(cli);
     }
-    var ali = oBtn.getElementsByTagName('li');
     ali[0].className = 'selected';
 
+    var showResult = document.getElementsByClassName('show');
+    console.log(showResult.length);
+    if(showResult.length > 8) {
+        for (var i = 0; i < showResult.length; i++) {
+            showResult[i].style.display = 'none';
+        }
+        for (var j = 0; j < 8; j++) {
+            showResult[j].style.display = 'block';
+        }
+    }
+    console.log(n);
+    for(var j = 0; j < n; j++) {
+        ali[j].index = j;
+        ali[j].onclick = function() {
+            b = this.index;
+            if (showResult.length - b * 8 < 8) {
+                var q = 8 - (showResult.length - b * 8);
+                console.log(q);
+                for(var i = 1; i <= q; i++) {
+                    content4 = document.createElement('div');
+                    content4.className = 'book';
+                    book_box.appendChild(content4);
+                }
+            }
+            for (var i = 0; i < ali.length; i++) {
+                ali[i].className = 'number';
+            }
+            this.className = 'selected';
+            for (var i = 0; i < showResult.length; i++) {
+                showResult[i].style.display = 'none';
+            }
+            for (var i = (b * 8); i < (b + 1) * 8; i++) {
+                showResult[i].style.display = 'block';
+            }
+        }
+    }
+    var prev = document.getElementById('prev');
+    var next = document.getElementById('next');
+    for(var m = 0; m < ali.length; m++) {
+        ali[m].base = m;
+    }
+    prev.onclick = function() {
+        base = document.getElementsByClassName('selected')[0].base;
+        base--;
+        if (base < 0){
+            base = 0;
+        }
+        if(showResult.length - base * 8 < 8) {
+            var n = 8 - (showResult.length - base * 8);
+            console.log(n);
+            for(var i = 1;i <= n; i++) {
+                content2 = document.createElement('div');
+                content2.className = 'book';
+                book_box.appendChild(content2);
+            }
+        }
+        for(var i = 0; i < ali.length; i++) {
+            if(ali[i].className == 'selected') {
+                ali[i].className = 'number';
+            }
+        }
+        ali[base].className = 'selected';
+        for(var j = 0; j < showResult.length; j++) {
+            showResult[j].style.display = 'none';
+        }
+        for(var j = base * 8; j < (base + 1)  * 8; j++) {
+            showResult[j].style.display = 'block';
+        }
+    }
+    next.onclick = function() {
+        base = document.getElementsByClassName('selected')[0].base;
+        base++;
+        if (base > ali.length - 1){
+            base = ali.length - 1;
+        }
+        if(showResult.length - base * 8 < 8) {
+            var n = 8 - (showResult.length - base * 8);
+            console.log(n);
+            for(var i = 1;i <= n; i++) {
+                content2 = document.createElement('div');
+                content2.className = 'book';
+                book_box.appendChild(content2);
+            }
+        }
+        for(var i = 0; i < ali.length; i++) {
+            if(ali[i].className == 'selected') {
+                ali[i].className = 'number';
+            }
+        }
+        ali[base].className = 'selected';
+        for(var j = 0; j < showResult.length; j++) {
+            showResult[j].style.display = 'none';
+        }
+        for(var j = base * 8; j < (base + 1) * 8; j++) {
+            showResult[j].style.display = 'block';
+        }
+    }
 }
 function getKey() {
     var content = document.getElementById('search');

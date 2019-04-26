@@ -46,6 +46,7 @@ var oBtn = document.getElementById('btn');
 var total = document.getElementById('total');
 var prev = document.getElementById('prev');
 var next = document.getElementById('next');
+var searchKey = document.getElementById('search');
     function createbook(number){
         //创建书本div
         for(var i = 0; i <= number.length - 1; i++) {              
@@ -73,13 +74,6 @@ var next = document.getElementById('next');
             n = Math.ceil(number.length / 8);
         }
         total.innerHTML = '共' + n + '页';
-        //创建页数
-        for(var i = 1;i <= n;i++) {                    
-            cli = document.createElement('li');
-            cli.innerHTML = i;
-            cli.className = 'number';
-            oBtn.appendChild(cli);
-        }
         var book = book_box.getElementsByClassName('book');
         var ali = oBtn.getElementsByTagName('li');
         //全部隐藏
@@ -90,25 +84,36 @@ var next = document.getElementById('next');
         for (var j = 0; j < 8 ; j++){          
             book[j].style.display = "block";
         }
+        if(n != 0) {
+            //创建页数
+            for(var i = 1;i <= n;i++) {                    
+                cli = document.createElement('li');
+                cli.innerHTML = i;
+                cli.className = 'number';
+                oBtn.appendChild(cli);
+            }
+            for (var i = 0; i <= n - 1; i++) {
+                ali[i].index = i;
+                ali[0].className = 'selected';
 
-        for (var i = 0; i <= n - 1; i++) {
-            ali[i].index = i;
-            ali[0].className = 'selected';
-
-            ali[i].onclick = function() {
-                b = this.index;
-                for (var j = 0; j < ali.length; j++) {
-                    ali[j].className = 'number';
-                }
-                this.className = 'selected';
-                //全部隐藏
-                 for (var j = 0; j < number.length; j++) {    
-                    bookpic[j].style.display = "none";
-                }
-                for (var j = (b * 8); j < (b + 1) * 8; j++) {
-                    bookpic[j].style.display = "block";
+                ali[i].onclick = function() {
+                    b = this.index;
+                    for (var j = 0; j < ali.length; j++) {
+                        ali[j].className = 'number';
+                    }
+                    this.className = 'selected';
+                    //全部隐藏
+                    for (var j = 0; j < number.length; j++) {    
+                        bookpic[j].style.display = "none";
+                    }
+                    for (var j = (b * 8); j < (b + 1) * 8; j++) {
+                        bookpic[j].style.display = "block";
+                    }
                 }
             }
+        } else {
+            alert('无查找信息');
+            searchKey.focus();
         }
     }
 var book = document.getElementsByClassName('book');
@@ -146,7 +151,6 @@ var h = menu.offsetHeight;
             document.getElementsByClassName('detail-box')[0].classList.remove('detailBox-after');
         }
         var book = document.getElementsByClassName('book');
-        var index1 = 0;
         for (var i = 0; i <= number.length - 1; i++) {
             book[i].index1 = i;
             book[i].onclick = function() {
@@ -167,8 +171,8 @@ var h = menu.offsetHeight;
                 document.getElementsByClassName('book-name')[0].innerHTML = title;
                 document.getElementsByClassName('author-name')[0].innerHTML = author;
                 document.getElementsByClassName('pub-name')[0].innerHTML = publish;
-                document.getElementsByClassName('time')[0].innerHTML = '出版时间:' + publishDate;
-                document.getElementsByClassName('book-number')[0].innerHTML = '图书馆藏书' + total + '本';
+                document.getElementsByClassName('time')[0].innerHTML = '出版时间:' + ' ' + publishDate;
+                document.getElementsByClassName('book-number')[0].innerHTML = '图书馆藏书:' + ' ' + total + '本';
                 document.getElementsByClassName('book-position')[0].innerHTML = position;
                 document.getElementById('author_intro').innerHTML = authorIntro;
                 document.getElementById('book_intro').innerHTML = bookIntro;
@@ -232,9 +236,12 @@ window.onload=function(){
         }
     }
     var x = 0;
-    for(var i=0;i<book.length;i++) {
+    for(var i = 0;i < book.length; i++) {
         if(book[i].style.display == "block"){
+            //计算书本信息显示的数量
             x++;
+            //类名show用于计数
+            book[i].classList.add('show');
         }
     }
     var m = x;
@@ -254,14 +261,118 @@ window.onload=function(){
     total.innerHTML = '共' + x + '页';
     //先清空内部标签，再创建新的页数
     oBtn.innerHTML = '';  
-    for(var j = 1; j <= x; j++) {
-        cli = document.createElement('li');
-        cli.innerHTML = j;
-        cli.className = 'number';
-        oBtn.appendChild(cli);
-    }
     var ali = oBtn.getElementsByTagName('li');
-    ali[0].className = 'selected';
+    if (x != 0) {
+        for(var j = 1; j <= x; j++) {
+            cli = document.createElement('li');
+            cli.innerHTML = j;
+            cli.className = 'number';
+            oBtn.appendChild(cli);
+        }
+        ali[0].className = 'selected';
+        
+        var showResult = document.getElementsByClassName('show');
+        if (showResult.length > 8) {
+            for (var i = 0; i < showResult.length; i++) {
+                showResult[i].style.display = 'none';
+            }
+            for (var j = 0; j < 8; j++) {
+                showResult[j].style.display = 'block';
+            }
+        }
+        //页面切换
+        for (var j = 0; j < x; j++) {
+            ali[j].index = j;
+            ali[j].onclick = function() {
+                b = this.index;
+                if (showResult.length - b * 8 < 8) {
+                    var q = 8 - (showResult.length - b * 8);
+                    console.log(q);
+                    for(var i = 1; i <= q; i++) {
+                        content4 = document.createElement('div');
+                        content4.className = 'book';
+                        book_box.appendChild(content4);
+                    }
+                }
+                for (var i = 0; i < ali.length; i++) {
+                    ali[i].className = 'number';
+                }
+                this.className = 'selected';
+                for (var i = 0; i < showResult.length; i++) {
+                    showResult[i].style.display = 'none';
+                }
+                for (var i = (b * 8); i < (b + 1) * 8; i++) {
+                    showResult[i].style.display = 'block';
+                }
+            }
+        }
+        //左右点击
+        var prev = document.getElementById('prev');
+        var next = document.getElementById('next');
+        for(var m = 0; m < ali.length; m++) {
+            ali[m].base = m;
+        }
+        prev.onclick = function() {
+            base = document.getElementsByClassName('selected')[0].base;
+            base--;
+            if (base < 0){
+                base = 0;
+            }
+            if(showResult.length - base * 8 < 8) {
+                var n = 8 - (showResult.length - base * 8);
+                console.log(n);
+                for(var i = 1;i <= n; i++) {
+                    content2 = document.createElement('div');
+                    content2.className = 'book';
+                    book_box.appendChild(content2);
+                }
+            }
+            for(var i = 0; i < ali.length; i++) {
+                if(ali[i].className == 'selected') {
+                    ali[i].className = 'number';
+                }
+            }
+            ali[base].className = 'selected';
+            for(var j = 0; j < showResult.length; j++) {
+                showResult[j].style.display = 'none';
+            }
+            for(var j = base * 8; j < (base + 1)  * 8; j++) {
+                showResult[j].style.display = 'block';
+            }
+        }
+        next.onclick = function() {
+            base = document.getElementsByClassName('selected')[0].base;
+            base++;
+            if (base > ali.length - 1){
+                base = ali.length - 1;
+            }
+            if(showResult.length - base * 8 < 8) {
+                var n = 8 - (showResult.length - base * 8);
+                console.log(n);
+                for(var i = 1;i <= n; i++) {
+                    content2 = document.createElement('div');
+                    content2.className = 'book';
+                    book_box.appendChild(content2);
+                }
+            }
+            for(var i = 0; i < ali.length; i++) {
+                if(ali[i].className == 'selected') {
+                    ali[i].className = 'number';
+                }
+            }
+            ali[base].className = 'selected';
+            for(var j = 0; j < showResult.length; j++) {
+                showResult[j].style.display = 'none';
+            }
+            for(var j = base * 8; j < (base + 1) * 8; j++) {
+                showResult[j].style.display = 'block';
+            }
+        }
+    } else {
+        var searchKey = document.getElementById('search');
+        alert('无查找内容');
+        searchKey.focus();
+    }
 
     var change_class = document.getElementsByClassName('nav');
     change_class[0].onclick = function() {

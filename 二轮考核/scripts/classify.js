@@ -21,7 +21,7 @@ Mock.mock('http://test.cn/class', {
                          // 书本链接
                          bookUrl:[{
                              doubanUrl:'@url()',
-                             zhihuUrl:'@url()'
+                             //zhihuUrl:'@url()'
                          }],
                          // 书本购买链接
                          buyUrl:[{
@@ -30,7 +30,7 @@ Mock.mock('http://test.cn/class', {
                              AmazonUrl:'@url()'
                          }],
                          // 作者介绍
-                         authorIntro:'@paragraph(2)',
+                         //authorIntro:'@paragraph(2)',
                          // 书本介绍
                          bookIntro:'@paragraph(2)',
                          // 书本封面链接
@@ -44,7 +44,7 @@ var book = document.getElementById('flex-box');
 var oBtn = document.getElementById('btn');
 var total = document.getElementById('total');
 var prev = document.getElementById('prev');
-var next = document.getElementById('next')
+var next = document.getElementById('next');
     function createbook(number){
         var n = 0;
         //动态计算页数
@@ -115,10 +115,8 @@ var next = document.getElementById('next')
                 for (var j = (b * 8); j < (b + 1) * 8; j++) {
                     bookpic[j].style.display = "block";
                 }
-                window.scrollTo(0,0);
             }
         }
-        var base = 0;
         for(var m = 0; m < ali.length; m++) {
             ali[m].base = m;
         }
@@ -184,11 +182,10 @@ var next = document.getElementById('next')
         var close = document.getElementsByClassName('close')[0];
         var wrap = document.getElementsByClassName('wrap')[0];
         close.onclick = function() {
-            wrap.classList.remove('wrap-after');
+            wrap.classList.remove('wrap-before');
             document.getElementsByClassName('detail-box')[0].classList.remove('detailBox-after');
         }
         var bookpic = document.getElementsByClassName('book');
-        var index1 = 0;
         for (var i = 0; i <= number.length - 1; i++) {
             bookpic[i].index1 = i;
             bookpic[i].onclick = function() {
@@ -209,17 +206,25 @@ var next = document.getElementById('next')
                 document.getElementsByClassName('book-name')[0].innerHTML = title;
                 document.getElementsByClassName('author-name')[0].innerHTML = author;
                 document.getElementsByClassName('pub-name')[0].innerHTML = publish;
-                document.getElementsByClassName('time')[0].innerHTML = '出版时间:' + publishDate;
-                document.getElementsByClassName('book-number')[0].innerHTML = '图书馆藏书' + total + '本';
+                document.getElementsByClassName('time')[0].innerHTML = '出版时间:' + ' ' + publishDate;
+                document.getElementsByClassName('book-number')[0].innerHTML = '图书馆藏书:' + ' ' + total + '本';
                 document.getElementsByClassName('book-position')[0].innerHTML = position;
-                document.getElementById('author_intro').innerHTML = authorIntro;
+                if(authorIntro == undefined) {
+                    document.getElementById('author_intro').innerHTML = '待更新';
+                } else {
+                    document.getElementById('author_intro').innerHTML = authorIntro;
+                }
                 document.getElementById('book_intro').innerHTML = bookIntro;
                 document.getElementById('douban').title = douban;
-                document.getElementById('zhihu').title = zhihu;
+                if (zhihu == undefined) {
+                    document.getElementById('zhihu').style.display = 'none';
+                } else {
+                    document.getElementById('zhihu').title = zhihu;
+                }
                 document.getElementById('jingdong').title = jD;
                 document.getElementById('dangdang').title = Dang;
                 document.getElementById('amazon').title = amazon;
-                wrap.classList.add('wrap-after');
+                wrap.classList.add('wrap-before');   
                 document.getElementsByClassName('detail-box')[0].classList.add('detailBox-after');
                 console.log(i);
             }

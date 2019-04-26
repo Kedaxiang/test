@@ -34,7 +34,7 @@ header > img {
 #icon {
     width: 18px;
     height: 18px;
-    background: url(../../images/icon.png) no-repeat;
+    background: url(../images/icon.png) no-repeat;
     position: absolute;
     top: 5px;
     right: 14px;
@@ -135,6 +135,7 @@ ul#nav  {
     height: 1255px;
     width: 1280px;
     margin: auto;
+    overflow: hidden;
 }
 #box {
     position: relative;
@@ -197,7 +198,7 @@ ul#nav  {
     cursor: pointer;
     width: 200px;
     height: 280px;
-    background: url(../../images/loading.jpg) no-repeat center;
+    background: url(../images/loading.jpg) no-repeat center;
 }
 .info {
     margin: 18px auto 0;

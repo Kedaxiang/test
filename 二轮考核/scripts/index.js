@@ -45,7 +45,6 @@ window.onload=function(){
     var user_name = document.getElementById('username');
     var key_word = document.getElementById("password");
     var btn = document.getElementById("btn");
-    var loginCon = document.getElementsByClassName('loginCon')[0];
     user_name.onkeypress=function() {
         if(event.keyCode == 13) {
             if ( user_name.value.length == 0) {

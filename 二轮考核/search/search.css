@@ -110,6 +110,7 @@ a {
     height: 1255px;
     width: 1280px;
     margin: auto;
+    overflow: hidden;
 }
 #box {
     position: relative;
@@ -192,6 +193,7 @@ a {
     border-radius: 50%;
     display: inline-block;
     text-align: center;
+    cursor: pointer;
 }
 .number {
     background: #fff; 
@@ -201,4 +203,5 @@ a {
     border-radius: 50%;
     display: inline-block;
     text-align: center;
+    cursor: pointer;
 }
